@@ -1,0 +1,243 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap');
+*{
+    margin: 0;
+}
+body{
+    font-family: 'Open Sans', sans-serif;
+}
+html{
+    scroll-behavior: smooth;
+}
+header{
+    width: 100%;
+    height: 80px;
+    box-shadow: 0 2px 8px #ccc;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    background-color: white;
+}
+nav{
+    width: 80%;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#logo-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+#logo{
+    display: flex;
+}
+#logo span{
+    font-size: 36px;
+    text-transform: uppercase;
+    font-weight: 400;
+    cursor: pointer;
+}
+#logo span:first-child{
+    font-weight: 800;   
+}
+#anchors{
+    padding-left: 30px;
+}
+#anchors, #cart-account-wrapper{
+    display: flex;
+    align-items: center;
+}
+#anchors a{
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 18px;
+    margin: 0 20px;
+    text-decoration: none;
+    color: black;
+}
+#search-wrapper{
+    width: 400px;
+    height: 25px;
+    position: relative;
+    background-color: #F5F2F2;
+}
+#search-wrapper i{
+    position: absolute;
+    color: #999;
+    font-size: 18px;
+    top: 15%;
+    left: 2%;
+    cursor: pointer;
+}
+#search-box{
+    border: none;
+    outline: none;
+    width: 80%;
+    box-sizing: border-box;
+    padding: 0px 24px 0px 35px;
+    background-color: #F5F2F2;
+}
+#cart-account-wrapper i:first-child{
+    font-size: 18px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+#cart-account-wrapper i:last-child{
+    font-size: 25px;
+    margin-left: 20px;
+    cursor: pointer;
+}
+#clothing{
+    padding-top: 10px;
+}
+h2{
+    margin: 25px 0;
+    font-size: 28px;
+    font-weight: 600;
+    opacity: 0.8;
+}
+#products{
+    width: 80%;
+    margin: 0 auto 120px auto;
+}
+.card-wrapper{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-gap: 15px;
+    cursor:pointer;
+}
+.card{
+    width: 100%;
+    box-shadow: 0 2px 5px #ccc;
+    border-radius: 5px;
+}
+.image{
+    width: 100%;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+#accesories{
+    padding-top: 80px;
+}
+.desc{
+    font-weight: 600;
+    font-size: 16px;
+}
+.text-wrapper{
+    padding: 15px;
+}
+.brand{
+    font-weight: 600;
+    opacity: 0.8;
+    margin-top: 12px;
+    font-size: 12px;
+}
+.price{
+    margin-top: 12px;
+    font-weight: 600;
+    color: #009688;
+}
+footer{
+    background-color: #1C1B1E;
+}
+#footer-wrapper{
+    width: 90%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 150px);
+    grid-gap: 80px;
+    justify-content: center;
+    box-sizing: border-box;
+    padding: 50px;
+}
+#footer-wrapper h4{
+    font-weight: 600;
+    font-size: 16px;
+    color: white;
+    opacity: 0.9;
+}
+#footer-wrapper p{
+    color: white;
+    font-size: 14px;
+    opacity: 0.8;
+    margin-top: 12px;
+    cursor: pointer;
+}
+.add{
+    color: white;
+    font-size: 14px;
+    opacity: 0.8;
+    display: inline-block;
+    margin-top: 12px;
+}
+#banner-wrapper{
+    margin-top: 100px;
+    width: 100%;
+    height: 250px;
+    position: relative;
+}
+.banners{
+    height: 100%;
+    width: 90%;
+    margin: 0 auto;
+}
+
+#banner-wrapper img{
+    width: 100%;
+    height: 100%;
+}
+#img1, #img2, #img3, #img4{
+    display: none;
+}
+#slide{
+    animation-name: bannerrolling;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    animation-delay: 1000ms;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes bannerrolling{
+    0%{
+        transform: translateX(500%);
+    }
+    20%{
+        transform: translateX(0);
+    }
+    80%{
+        transform: translateX(0);
+    }
+    100%{
+        transform: translateX(-500%);
+    }
+}
+@media (max-width:400px){
+    .card-wrapper{
+        grid-template-columns: 1fr 1fr;
+    }
+    .image{
+        max-height: 180px;
+    }
+    #cart-account-wrapper, #search-wrapper{
+        display: none;
+    }
+    nav{
+        margin: 0 auto;
+        box-sizing: border-box;
+    }
+    #footer-wrapper{
+        grid-template-columns: 1fr;
+    }
+    #anchors{
+        display: block;
+        padding: 0;
+    }
+    #anchors a{
+        font-size: 15px;
+    }
+}
